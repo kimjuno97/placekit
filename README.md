@@ -1,32 +1,42 @@
-# React + TypeScript + Vite
+# PlaceKit
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+오프라인 매장 운영/결제 서비스에서 반복되는 UX 패턴을 컴포넌트와 디자인 토큰으로 정리한 React Design System 프로젝트입니다.
 
-Currently, two official plugins are available:
+## Why
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+오프라인 매장 서비스는 빠른 조작, 명확한 상태 피드백, 다양한 디바이스 대응, 네트워크 불안정성 대응이 중요합니다.
+PlaceKit은 이러한 문제를 디자인 시스템 관점에서 해결하기 위해 만들었습니다.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Design Token
+- Reusable Components
+- Payment Status UX
+- Loading / Empty / Error Pattern
+- Responsive Layout
+- Keyboard Accessibility
+- UX Linter Prototype
 
-## Expanding the Oxlint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+React, TypeScript, Vite, Vanilla Extract, Framer Motion, Storybook, pnpm
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## Components
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- Button
+- TextField
+- Modal
+- Toast
+- PaymentStatus
+- EmptyState
+- ErrorState
+- Skeleton
+- OrderTable
+
+## UX Principles
+
+1. 중요한 액션은 중복 실행을 방지한다.
+2. 결제 상태는 pending, failed, network_error를 명확히 구분한다.
+3. Empty와 Error는 다른 의미로 다룬다.
+4. 키보드만으로도 주요 플로우를 완료할 수 있어야 한다.
+5. 로딩 중에도 레이아웃 흔들림을 최소화한다.
