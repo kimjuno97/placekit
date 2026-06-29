@@ -1,6 +1,7 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 // https://vite.dev/config/
 import path from "node:path";
@@ -14,11 +15,14 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react(), VanillaExtractPlugin()],
+  plugins: [react(), vanillaExtractPlugin()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "/src"),
+      "@": path.resolve(dirname, "./src"),
     },
+  },
+  optimizeDeps: {
+    include: ["@vanilla-extract/recipes/createRuntimeFn"],
   },
   test: {
     projects: [
@@ -48,7 +52,3 @@ export default defineConfig({
     ],
   },
 });
-
-function VanillaExtractPlugin(): import("vite").PluginOption {
-  throw new Error("Function not implemented.");
-}
