@@ -8,6 +8,9 @@ initialize({ onUnhandledRequest: 'bypass' })
 const preview: Preview = {
   loaders: [mswLoader],
   parameters: {
+    docs: {
+      codePanel: true,
+    },
     msw: {
       handlers: mswHandlers,
     },

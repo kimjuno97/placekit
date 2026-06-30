@@ -22,6 +22,13 @@ export const Primary: Story = {
     size: "medium",
     children: "결제하기",
   },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Button variant="primary" size="medium">결제하기</Button>',
+      },
+    },
+  },
   play: async ({ args, canvas, userEvent }) => {
     await userEvent.click(canvas.getByRole("button", { name: /결제하기/i }));
 
@@ -34,12 +41,26 @@ export const Secondary: Story = {
     variant: "secondary",
     children: "취소",
   },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Button variant="secondary">취소</Button>',
+      },
+    },
+  },
 };
 
 export const Danger: Story = {
   args: {
     variant: "danger",
     children: "삭제",
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Button variant="danger">삭제</Button>',
+      },
+    },
   },
 };
 
@@ -48,12 +69,26 @@ export const Small: Story = {
     size: "small",
     children: "작게",
   },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Button size="small">작게</Button>',
+      },
+    },
+  },
 };
 
 export const Large: Story = {
   args: {
     size: "large",
     children: "크게",
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Button size="large">크게</Button>',
+      },
+    },
   },
 };
 
@@ -64,6 +99,11 @@ export const FullWidth: Story = {
   },
   parameters: {
     layout: "padded",
+    docs: {
+      source: {
+        code: "<Button fullWidth>전체 너비</Button>",
+      },
+    },
   },
 };
 
@@ -71,6 +111,13 @@ export const Loading: Story = {
   args: {
     loading: true,
     children: "저장",
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: "<Button loading>저장</Button>",
+      },
+    },
   },
   play: async ({ canvas }) => {
     const button = canvas.getByRole("button", { name: /처리 중/i });
@@ -84,5 +131,12 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     children: "비활성",
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: "<Button disabled>비활성</Button>",
+      },
+    },
   },
 };
