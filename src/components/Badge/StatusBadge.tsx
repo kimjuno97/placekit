@@ -5,6 +5,7 @@ export type StatusBadgeStatus =
   | "pending"
   | "paid"
   | "failed"
+  | "canceled"
   | "refunded"
   | "network_error";
 
@@ -16,6 +17,7 @@ const statusLabel: Record<StatusBadgeStatus, string> = {
   pending: "결제 대기",
   paid: "결제 완료",
   failed: "결제 실패",
+  canceled: "결제 취소",
   refunded: "환불 완료",
   network_error: "네트워크 오류",
 };
@@ -24,6 +26,7 @@ const statusVariant: Record<StatusBadgeStatus, BadgeProps["variant"]> = {
   pending: "warning",
   paid: "success",
   failed: "danger",
+  canceled: "neutral",
   refunded: "neutral",
   network_error: "info",
 };

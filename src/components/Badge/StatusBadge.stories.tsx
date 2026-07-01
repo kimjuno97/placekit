@@ -34,6 +34,12 @@ export const Failed: Story = {
   },
 };
 
+export const Canceled: Story = {
+  args: {
+    status: "canceled",
+  },
+};
+
 export const Refunded: Story = {
   args: {
     status: "refunded",
