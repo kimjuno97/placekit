@@ -9,6 +9,22 @@ const meta = {
     layout: "padded",
   },
   tags: ["ai-generated"],
+  argTypes: {
+    status: {
+      control: "select",
+      options: [
+        "pending",
+        "paid",
+        "failed",
+        "canceled",
+        "refunded",
+        "network_error",
+      ],
+    },
+    title: { control: "text" },
+    description: { control: "text" },
+    action: { control: false },
+  },
 } satisfies Meta<typeof PaymentStatus>;
 
 export default meta;

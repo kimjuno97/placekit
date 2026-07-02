@@ -11,6 +11,25 @@ const meta = {
   args: {
     onClick: fn(),
   },
+  argTypes: {
+    children: { control: "text" },
+    variant: {
+      control: "inline-radio",
+      options: ["primary", "secondary", "danger"],
+    },
+    size: {
+      control: "inline-radio",
+      options: ["small", "medium", "large"],
+    },
+    loading: { control: "boolean" },
+    fullWidth: { control: "boolean" },
+    disabled: { control: "boolean" },
+    type: {
+      control: "inline-radio",
+      options: ["button", "submit", "reset"],
+    },
+    onClick: { action: "clicked" },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;

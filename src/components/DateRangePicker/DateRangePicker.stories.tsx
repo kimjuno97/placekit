@@ -11,6 +11,17 @@ const meta = {
   args: {
     onRangeChange: fn(),
   },
+  argTypes: {
+    label: { control: "text" },
+    placeholder: { control: "text" },
+    helperText: { control: "text" },
+    defaultStartDate: { control: "date" },
+    defaultEndDate: { control: "date" },
+    minDate: { control: "date" },
+    maxDate: { control: "date" },
+    value: { control: false },
+    onRangeChange: { action: "range changed" },
+  },
 } satisfies Meta<typeof DateRangePicker>;
 
 export default meta;

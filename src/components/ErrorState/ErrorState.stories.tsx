@@ -9,6 +9,21 @@ const meta = {
     layout: "padded",
   },
   tags: ["ai-generated"],
+  argTypes: {
+    title: { control: "text" },
+    description: { control: "text" },
+    code: { control: "text" },
+    icon: { control: "text" },
+    severity: {
+      control: "inline-radio",
+      options: ["warning", "error"],
+    },
+    size: {
+      control: "inline-radio",
+      options: ["compact", "medium", "spacious"],
+    },
+    action: { control: false },
+  },
 } satisfies Meta<typeof ErrorState>;
 
 export default meta;

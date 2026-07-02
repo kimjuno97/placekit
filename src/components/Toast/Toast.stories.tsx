@@ -14,6 +14,30 @@ const meta = {
   args: {
     onOpenChange: fn(),
   },
+  argTypes: {
+    open: { control: "boolean" },
+    title: { control: "text" },
+    description: { control: "text" },
+    variant: {
+      control: "inline-radio",
+      options: ["info", "success", "warning", "error"],
+    },
+    position: {
+      control: "select",
+      options: [
+        "top-left",
+        "top-center",
+        "top-right",
+        "bottom-left",
+        "bottom-center",
+        "bottom-right",
+      ],
+    },
+    closeLabel: { control: "text" },
+    duration: { control: { type: "number", min: 0, step: 100 } },
+    action: { control: false },
+    onOpenChange: { action: "open changed" },
+  },
 } satisfies Meta<typeof Toast>;
 
 export default meta;

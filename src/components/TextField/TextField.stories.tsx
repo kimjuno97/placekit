@@ -11,6 +11,27 @@ const meta = {
   args: {
     onChange: fn(),
   },
+  argTypes: {
+    label: { control: "text" },
+    helperText: { control: "text" },
+    errorMessage: { control: "text" },
+    placeholder: { control: "text" },
+    value: { control: "text" },
+    defaultValue: { control: "text" },
+    size: {
+      control: "inline-radio",
+      options: ["small", "medium", "large"],
+    },
+    type: {
+      control: "select",
+      options: ["text", "email", "number", "password", "tel", "url"],
+    },
+    fullWidth: { control: "boolean" },
+    disabled: { control: "boolean" },
+    readOnly: { control: "boolean" },
+    required: { control: "boolean" },
+    onChange: { action: "changed" },
+  },
 } satisfies Meta<typeof TextField>;
 
 export default meta;

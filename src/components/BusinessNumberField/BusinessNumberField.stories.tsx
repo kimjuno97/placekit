@@ -11,6 +11,19 @@ const meta = {
   args: {
     onValueChange: fn(),
   },
+  argTypes: {
+    label: { control: "text" },
+    helperText: { control: "text" },
+    errorMessage: { control: "text" },
+    placeholder: { control: "text" },
+    value: { control: "text" },
+    defaultValue: { control: "text" },
+    fullWidth: { control: "boolean" },
+    disabled: { control: "boolean" },
+    readOnly: { control: "boolean" },
+    required: { control: "boolean" },
+    onValueChange: { action: "value changed" },
+  },
 } satisfies Meta<typeof BusinessNumberField>;
 
 export default meta;

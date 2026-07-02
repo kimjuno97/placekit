@@ -8,6 +8,17 @@ const meta = {
     layout: "centered",
   },
   tags: ["ai-generated"],
+  argTypes: {
+    label: { control: "text" },
+    size: {
+      control: "inline-radio",
+      options: ["small", "medium", "large"],
+    },
+    tone: {
+      control: "inline-radio",
+      options: ["primary", "neutral", "inverse"],
+    },
+  },
 } satisfies Meta<typeof Spinner>;
 
 export default meta;

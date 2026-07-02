@@ -32,6 +32,11 @@ const meta = {
     layout: "centered",
   },
   tags: ["ai-generated"],
+  argTypes: {
+    items: { control: "object" },
+    defaultOpenIds: { control: "object" },
+    allowMultiple: { control: "boolean" },
+  },
 } satisfies Meta<typeof Accordion>;
 
 export default meta;

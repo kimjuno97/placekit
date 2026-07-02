@@ -3,11 +3,29 @@ import { expect } from "storybook/test";
 import { StatusBadge } from "./StatusBadge";
 
 const meta = {
+  title: "Components/StatusBadge",
   component: StatusBadge,
   parameters: {
     layout: "centered",
   },
   tags: ["ai-generated"],
+  argTypes: {
+    status: {
+      control: "select",
+      options: [
+        "pending",
+        "paid",
+        "failed",
+        "canceled",
+        "refunded",
+        "network_error",
+      ],
+    },
+    size: {
+      control: "inline-radio",
+      options: ["small", "medium", "large"],
+    },
+  },
 } satisfies Meta<typeof StatusBadge>;
 
 export default meta;

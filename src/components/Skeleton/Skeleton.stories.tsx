@@ -8,6 +8,14 @@ const meta = {
     layout: "centered",
   },
   tags: ["ai-generated"],
+  argTypes: {
+    width: { control: "text" },
+    height: { control: "text" },
+    radius: {
+      control: "inline-radio",
+      options: ["none", "small", "medium", "round"],
+    },
+  },
 } satisfies Meta<typeof Skeleton>;
 
 export default meta;

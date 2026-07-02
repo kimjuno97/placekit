@@ -8,6 +8,14 @@ const meta = {
     layout: "padded",
   },
   tags: ["ai-generated"],
+  argTypes: {
+    status: {
+      control: "inline-radio",
+      options: ["offline", "unstable", "reconnected"],
+    },
+    title: { control: "text" },
+    description: { control: "text" },
+  },
 } satisfies Meta<typeof NetworkBanner>;
 
 export default meta;

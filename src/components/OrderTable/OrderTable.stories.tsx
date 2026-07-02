@@ -39,6 +39,12 @@ const meta = {
   args: {
     onRowClick: fn(),
   },
+  argTypes: {
+    orders: { control: "object" },
+    loading: { control: "boolean" },
+    error: { control: "boolean" },
+    onRowClick: { action: "row clicked" },
+  },
 } satisfies Meta<typeof OrderTable>;
 
 export default meta;

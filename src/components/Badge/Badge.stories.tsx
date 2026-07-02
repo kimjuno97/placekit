@@ -3,11 +3,23 @@ import { expect } from "storybook/test";
 import { Badge } from "./Badge";
 
 const meta = {
+  title: "Components/Badge",
   component: Badge,
   parameters: {
     layout: "centered",
   },
   tags: ["ai-generated"],
+  argTypes: {
+    children: { control: "text" },
+    variant: {
+      control: "select",
+      options: ["neutral", "info", "success", "warning", "danger", "outline"],
+    },
+    size: {
+      control: "inline-radio",
+      options: ["small", "medium", "large"],
+    },
+  },
 } satisfies Meta<typeof Badge>;
 
 export default meta;

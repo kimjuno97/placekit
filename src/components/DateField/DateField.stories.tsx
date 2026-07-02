@@ -11,6 +11,22 @@ const meta = {
   args: {
     onValueChange: fn(),
   },
+  argTypes: {
+    label: { control: "text" },
+    value: { control: "text" },
+    defaultValue: { control: "text" },
+    helperText: { control: "text" },
+    errorMessage: { control: "text" },
+    placeholder: { control: "text" },
+    minDate: { control: "date" },
+    maxDate: { control: "date" },
+    fullWidth: { control: "boolean" },
+    clearable: { control: "boolean" },
+    disabled: { control: "boolean" },
+    readOnly: { control: "boolean" },
+    required: { control: "boolean" },
+    onValueChange: { action: "value changed" },
+  },
 } satisfies Meta<typeof DateField>;
 
 export default meta;

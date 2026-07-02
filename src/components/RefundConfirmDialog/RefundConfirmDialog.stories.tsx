@@ -14,6 +14,13 @@ const meta = {
     onConfirm: fn(),
     onOpenChange: fn(),
   },
+  argTypes: {
+    open: { control: "boolean" },
+    amount: { control: { type: "number", min: 0, step: 1000 } },
+    paymentId: { control: "text" },
+    onConfirm: { action: "confirmed" },
+    onOpenChange: { action: "open changed" },
+  },
 } satisfies Meta<typeof RefundConfirmDialog>;
 
 export default meta;

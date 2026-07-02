@@ -14,6 +14,18 @@ const meta = {
   args: {
     onOpenChange: fn(),
   },
+  argTypes: {
+    open: { control: "boolean" },
+    title: { control: "text" },
+    description: { control: "text" },
+    children: { control: "text" },
+    size: {
+      control: "inline-radio",
+      options: ["small", "medium", "large"],
+    },
+    footer: { control: false },
+    onOpenChange: { action: "open changed" },
+  },
 } satisfies Meta<typeof Modal>;
 
 export default meta;

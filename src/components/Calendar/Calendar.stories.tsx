@@ -11,6 +11,20 @@ const meta = {
   args: {
     onDateSelect: fn(),
   },
+  argTypes: {
+    value: { control: "date" },
+    defaultValue: { control: "date" },
+    referenceDate: { control: "date" },
+    month: { control: "date" },
+    selectedDate: { control: "date" },
+    rangeStart: { control: "date" },
+    rangeEnd: { control: "date" },
+    minDate: { control: "date" },
+    maxDate: { control: "date" },
+    disabled: { control: "boolean" },
+    readOnly: { control: "boolean" },
+    onDateSelect: { action: "date selected" },
+  },
 } satisfies Meta<typeof Calendar>;
 
 export default meta;
