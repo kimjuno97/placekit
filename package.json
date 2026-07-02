@@ -1,25 +1,44 @@
 {
   "name": "placekit",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/placekit.cjs",
+  "module": "./dist/placekit.js",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/placekit.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/placekit.js",
+      "require": "./dist/placekit.cjs"
+    },
+    "./style.css": "./dist/placekit.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build && tsc -p tsconfig.build.json",
     "lint": "oxlint",
-    "preview": "vite preview",
+    "prepack": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "typecheck": "tsc --noEmit"
   },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "dependencies": {
     "@vanilla-extract/css": "^1.21.0",
-    "@vanilla-extract/recipes": "^0.5.7",
-    "motion": "^12.42.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "@vanilla-extract/recipes": "^0.5.7"
   },
   "devDependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "@chromatic-com/storybook": "^5.2.1",
     "@storybook/addon-a11y": "^10.4.6",
     "@storybook/addon-docs": "^10.4.6",

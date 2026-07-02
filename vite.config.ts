@@ -16,6 +16,17 @@ const dirname =
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [react(), vanillaExtractPlugin()],
+  publicDir: false,
+  build: {
+    lib: {
+      entry: path.resolve(dirname, "src/index.ts"),
+      formats: ["es", "cjs"],
+      fileName: (format) => (format === "es" ? "placekit.js" : "placekit.cjs"),
+    },
+    rollupOptions: {
+      external: ["react", "react-dom", "react/jsx-runtime"],
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(dirname, "./src"),

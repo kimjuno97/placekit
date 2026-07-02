@@ -1,9 +1,8 @@
-import type { Preview } from '@storybook/react-vite'
-import { initialize, mswLoader } from 'msw-storybook-addon'
-import '../src/index.css'
-import { mswHandlers } from './msw-handlers'
+import type { Preview } from "@storybook/react-vite";
+import { initialize, mswLoader } from "msw-storybook-addon";
+import { mswHandlers } from "./msw-handlers";
 
-initialize({ onUnhandledRequest: 'bypass' })
+initialize({ onUnhandledRequest: "bypass" });
 
 const preview: Preview = {
   loaders: [mswLoader],
@@ -11,13 +10,18 @@ const preview: Preview = {
     docs: {
       codePanel: true,
     },
+    options: {
+      storySort: {
+        method: "alphabetical",
+      },
+    },
     msw: {
       handlers: mswHandlers,
     },
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
 
@@ -25,8 +29,8 @@ const preview: Preview = {
       // 'todo' - show a11y violations in the test UI only
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
-      test: 'todo'
-    }
+      test: "todo",
+    },
   },
 };
 
