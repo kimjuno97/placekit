@@ -22,7 +22,7 @@ export type Order = {
   status: StatusBadgeStatus;
 };
 
-type OrderTableProps = {
+export type OrderTableProps = {
   orders?: Order[];
   loading?: boolean;
   error?: boolean;

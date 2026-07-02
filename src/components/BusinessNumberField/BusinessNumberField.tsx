@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TextField } from "../TextField/TextField";
 import type { TextFieldProps } from "../TextField/TextField";
 
-type BusinessNumberFieldProps = Omit<
+export type BusinessNumberFieldProps = Omit<
   TextFieldProps,
   | "defaultValue"
   | "helperText"

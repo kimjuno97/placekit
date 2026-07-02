@@ -7,7 +7,7 @@ import {
   titleStyle,
 } from "./EmptyState.css";
 
-type EmptyStateProps = {
+export type EmptyStateProps = {
   title: string;
   description?: string;
   action?: ReactNode;

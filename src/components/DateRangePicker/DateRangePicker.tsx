@@ -14,12 +14,12 @@ import {
   triggerStyle,
 } from "./DateRangePicker.css";
 
-type DateRange = {
+export type DateRange = {
   startDate?: Date;
   endDate?: Date;
 };
 
-type DateRangePickerProps = {
+export type DateRangePickerProps = {
   label?: string;
   defaultStartDate?: Date;
   defaultEndDate?: Date;

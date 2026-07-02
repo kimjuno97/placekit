@@ -1,7 +1,7 @@
 // Button.tsx
 import { buttonRecipe } from "./Button.css";
 
-type ButtonProps = {
+export type ButtonProps = {
   variant?: "primary" | "secondary" | "danger";
   size?: "small" | "medium" | "large";
   loading?: boolean;

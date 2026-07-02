@@ -10,7 +10,7 @@ import {
   warningStyle,
 } from "./RefundConfirmDialog.css";
 
-type RefundConfirmDialogProps = {
+export type RefundConfirmDialogProps = {
   amount: number;
   paymentId: string;
   open: boolean;

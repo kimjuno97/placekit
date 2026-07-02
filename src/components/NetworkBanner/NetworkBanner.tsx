@@ -9,7 +9,7 @@ import {
 
 export type NetworkBannerStatus = "offline" | "unstable" | "reconnected";
 
-type NetworkBannerProps = {
+export type NetworkBannerProps = {
   status: NetworkBannerStatus;
   title?: string;
   description?: string;

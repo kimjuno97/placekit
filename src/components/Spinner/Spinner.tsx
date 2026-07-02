@@ -1,7 +1,7 @@
 import type { HTMLAttributes } from "react";
 import { spinnerStyle, visuallyHiddenStyle } from "./Spinner.css";
 
-type SpinnerProps = {
+export type SpinnerProps = {
   label?: string;
   size?: "small" | "medium" | "large";
   tone?: "primary" | "neutral" | "inverse";

@@ -9,7 +9,7 @@ export type StatusBadgeStatus =
   | "refunded"
   | "network_error";
 
-type StatusBadgeProps = {
+export type StatusBadgeProps = {
   status: StatusBadgeStatus;
 } & Omit<BadgeProps, "children" | "variant">;
 

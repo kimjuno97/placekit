@@ -12,7 +12,7 @@ import {
 
 export type PaymentStatusType = StatusBadgeStatus;
 
-type PaymentStatusProps = {
+export type PaymentStatusProps = {
   status: PaymentStatusType;
   title?: string;
   description?: string;

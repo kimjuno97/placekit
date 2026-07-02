@@ -11,7 +11,7 @@ import {
   weekdayStyle,
 } from "./Calendar.css";
 
-type CalendarProps = {
+export type CalendarProps = {
   value?: Date;
   defaultValue?: Date;
   referenceDate?: Date;

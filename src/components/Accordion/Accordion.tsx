@@ -20,7 +20,7 @@ export type AccordionItem = {
   disabled?: boolean;
 };
 
-type AccordionProps = {
+export type AccordionProps = {
   items: AccordionItem[];
   defaultOpenIds?: string[];
   allowMultiple?: boolean;

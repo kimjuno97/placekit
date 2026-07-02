@@ -1,7 +1,7 @@
 import type { CSSProperties, HTMLAttributes } from "react";
 import { skeletonStyle, skeletonTextGroupStyle } from "./Skeleton.css";
 
-type SkeletonProps = {
+export type SkeletonProps = {
   width?: CSSProperties["width"];
   height?: CSSProperties["height"];
   radius?: "none" | "small" | "medium" | "round";
@@ -29,7 +29,7 @@ export function Skeleton({
   );
 }
 
-type SkeletonTextProps = {
+export type SkeletonTextProps = {
   lines?: number;
   width?: CSSProperties["width"];
   lastLineWidth?: CSSProperties["width"];
