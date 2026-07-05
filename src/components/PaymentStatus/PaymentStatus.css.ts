@@ -1,5 +1,32 @@
+import { keyframes, style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { style } from "@vanilla-extract/css";
+
+const iconEnter = keyframes({
+  "0%": {
+    opacity: 0,
+    transform: "translateY(8px) scale(0.82)",
+  },
+  "60%": {
+    opacity: 1,
+    transform: "translateY(-2px) scale(1.06)",
+  },
+  "100%": {
+    opacity: 1,
+    transform: "translateY(0) scale(1)",
+  },
+});
+
+const glyphKick = keyframes({
+  "0%": {
+    transform: "rotate(-14deg) scale(0.7)",
+  },
+  "55%": {
+    transform: "rotate(7deg) scale(1.12)",
+  },
+  "100%": {
+    transform: "rotate(0) scale(1)",
+  },
+});
 
 export const paymentStatusStyle = recipe({
   base: {
@@ -8,6 +35,8 @@ export const paymentStatusStyle = recipe({
     alignItems: "center",
     boxSizing: "border-box",
     width: "100%",
+    maxWidth: 520,
+    marginInline: "auto",
     border: "1px solid transparent",
     borderRadius: 18,
     background: "#FFFFFF",
@@ -45,6 +74,7 @@ export const iconStyle = recipe({
     borderRadius: 18,
     fontSize: 26,
     fontWeight: 900,
+    animation: `${iconEnter} 360ms cubic-bezier(0.2, 0.9, 0.2, 1.2) both`,
   },
   variants: {
     tone: {
@@ -70,6 +100,12 @@ export const iconStyle = recipe({
       },
     },
   },
+});
+
+export const iconGlyphStyle = style({
+  display: "inline-block",
+  transformOrigin: "50% 58%",
+  animation: `${glyphKick} 460ms cubic-bezier(0.2, 0.9, 0.2, 1.2) both`,
 });
 
 export const badgeWrapStyle = style({

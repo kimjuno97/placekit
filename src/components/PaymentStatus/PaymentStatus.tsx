@@ -1,9 +1,11 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import { StatusBadge } from "../Badge/StatusBadge";
 import type { StatusBadgeStatus } from "../Badge/StatusBadge";
+import { Spinner } from "../Spinner/Spinner";
 import {
   actionStyle,
   badgeWrapStyle,
+  iconGlyphStyle,
   descriptionStyle,
   iconStyle,
   paymentStatusStyle,
@@ -31,7 +33,7 @@ const paymentStatusMeta: Record<PaymentStatusType, PaymentStatusMeta> = {
   pending: {
     defaultTitle: "결제를 확인하고 있어요",
     defaultDescription: "승인 결과가 도착하면 자동으로 상태가 업데이트됩니다.",
-    icon: "...",
+    icon: "",
     tone: "waiting",
     role: "status",
   },
@@ -89,8 +91,22 @@ export function PaymentStatus({
       role={meta.role}
       {...props}
     >
-      <div aria-hidden="true" className={iconStyle({ tone: meta.tone })}>
-        {meta.icon}
+      <div
+        aria-hidden="true"
+        className={iconStyle({ tone: meta.tone })}
+        key={status}
+      >
+        {status === "pending" ? (
+          <Spinner
+            aria-hidden="true"
+            label="결제 상태 확인 중"
+            size="large"
+            tone="warning"
+            variant="dots"
+          />
+        ) : (
+          <span className={iconGlyphStyle}>{meta.icon}</span>
+        )}
       </div>
       <div className={badgeWrapStyle}>
         <StatusBadge status={status} />

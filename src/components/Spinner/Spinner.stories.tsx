@@ -16,7 +16,11 @@ const meta = {
     },
     tone: {
       control: "inline-radio",
-      options: ["primary", "neutral", "inverse"],
+      options: ["primary", "neutral", "inverse", "warning"],
+    },
+    variant: {
+      control: "inline-radio",
+      options: ["ring", "dots"],
     },
   },
 } satisfies Meta<typeof Spinner>;
@@ -47,9 +51,24 @@ export const Large: Story = {
   },
 };
 
+export const Dots: Story = {
+  args: {
+    label: "결제 상태를 확인하는 중",
+    variant: "dots",
+  },
+};
+
 export const Neutral: Story = {
   args: {
     tone: "neutral",
+  },
+};
+
+export const WarningDots: Story = {
+  args: {
+    label: "결제 상태를 확인하는 중",
+    tone: "warning",
+    variant: "dots",
   },
 };
 
