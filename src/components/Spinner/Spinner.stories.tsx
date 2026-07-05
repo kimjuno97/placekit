@@ -74,12 +74,24 @@ export const WarningDots: Story = {
 
 export const Inverse: Story = {
   args: {
+    label: "어두운 배경에서 로딩 중",
     tone: "inverse",
   },
-  parameters: {
-    backgrounds: {
-      default: "dark",
-      values: [{ name: "dark", value: "#191F28" }],
-    },
-  },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          alignItems: "center",
+          background: "#191F28",
+          borderRadius: 8,
+          display: "flex",
+          height: 72,
+          justifyContent: "center",
+          width: 96,
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
